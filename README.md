@@ -1,2 +1,1 @@
-# data-science-workflow
-A Practical Workflow for Data Science Projects
+# A Practical Workflow for Data Science Projects
