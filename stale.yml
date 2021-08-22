@@ -1,0 +1,21 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '30 15 * * mon'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-stale: 14
+        stale-pr-message: 'This pull request has had no activity in more than 2 weeks. Calling out reviewers: ${{ github.event.pull_request.requested_reviewers }}'
+        stale-pr-label: 'no-pr-activity'
