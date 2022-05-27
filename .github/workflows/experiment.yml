@@ -22,4 +22,6 @@ jobs:
       # Copy a label
       - name: Copy a label
         run: gh api "/repos/$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY/labels"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
