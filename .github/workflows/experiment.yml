@@ -1,5 +1,5 @@
 
-name: test
+name: experiment
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the develop branch
@@ -21,5 +21,5 @@ jobs:
 
       # Copy a label
       - name: Copy a label
-        run: gh api --method POST -H --hostname api.github.com /repos/$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY/labels -f name='bug' -f description='Something isn't working' -f color='f29513
+        run: gh api "/repos/$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY/labels"
       
