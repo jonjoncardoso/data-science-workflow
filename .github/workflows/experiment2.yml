@@ -1,0 +1,27 @@
+name: experiment2_project_&_labels
+# Controls when the action will run. Triggers the workflow on template update (this might work?)
+on:
+  repository_dispatch:
+    types: [update_template]
+  workflow_dispatch:
+jobs:
+
+  create-labels:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Copy a label
+      - name: Copy a label
+        run: gh api \
+            /repos/OWNER/REPO/labels \
+            -f name='blocked2 🚧'
+            -f description="Task blocked by some other issue."
+            -f color='E7A922'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
