@@ -2,7 +2,7 @@ name: setup
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  push 
+  create 
   
 # workflow
 jobs:
@@ -18,7 +18,7 @@ jobs:
       
       # Create labels
       - name: Create a label
-        run: gh label create blocked🚧 --description "Task blocked by some other issue." --color "E7A922"
+        run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color "E7A922"
         
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
