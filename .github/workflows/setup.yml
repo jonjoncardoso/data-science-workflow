@@ -5,10 +5,8 @@ on:
   push: 
     branches:    
       - 'main'
-    paths:
-      - '**.md'
   
-# workflow
+# workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
 jobs:
 
   create-labels:
