@@ -16,8 +16,7 @@ jobs:
 
       # Copy a label
       - name: Copy a label
-        run: gh api \
-            /repos/OWNER/REPO/labels \
+        run: gh api 
             -f name='blocked2 🚧'
             -f description="Task blocked by some other issue."
             -f color='E7A922'
