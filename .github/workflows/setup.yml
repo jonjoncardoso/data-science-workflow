@@ -2,7 +2,7 @@ name: setup
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  create 
+  push 
   
 # workflow
 jobs:
@@ -15,10 +15,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Create labels
-      - name: Create a label
-        run: gh label create  blocked🚧 --description "Task blocked by some other issue." --color "E7A922"
+      
+      # clone labels
+      - name: clone labels
+        run: gh label clone jonjoncardosos/data-science-workflow --repo ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
