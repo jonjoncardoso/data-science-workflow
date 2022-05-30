@@ -2,9 +2,9 @@ name: setup
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  push: 
-    branches:    
-      - 'main'
+  push:
+    paths:
+      - '**.md'
   
 # workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
 jobs:
