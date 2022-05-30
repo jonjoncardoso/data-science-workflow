@@ -1,0 +1,22 @@
+name: add-label-4
+
+# Controls when the action will run. Triggers the workflow on creation of a new project
+on:
+  push
+  
+# workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
+jobs:
+
+  create-labels:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Create labels
+      - run: gh label create data engineering 🧹 --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color A2C52F 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
