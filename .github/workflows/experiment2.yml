@@ -1,9 +1,8 @@
 name: experiment2_project_&_labels
-# Controls when the action will run. Triggers the workflow on template update (this might work?)
+# Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  repository_dispatch:
-    types: [update_template]
-  workflow_dispatch:
+  push:
+    branches: [ develop, main ]
 jobs:
 
   create-labels:
