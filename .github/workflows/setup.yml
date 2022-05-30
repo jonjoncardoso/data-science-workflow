@@ -2,7 +2,11 @@ name: setup
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  create
+  push: 
+    branches:    
+      - 'main'
+    paths:
+      - '**.md'
   
 # workflow
 jobs:
