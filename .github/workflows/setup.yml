@@ -21,11 +21,8 @@ jobs:
       - uses: actions/checkout@v2
       
       # Create labels
-      - run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color E7A922;
+      - run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color E7A922 create bug2🐞 --description "Something isn't working" --color D73A4A
              #gh label clone jonjoncardoso/data-science-workflow
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: gh label create bug2🐞 --description "Something isn't working" --color D73A4A
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #- run: echo "::set-output name=random-number::$(echo $RANDOM)"
