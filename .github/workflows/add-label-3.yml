@@ -17,6 +17,6 @@ jobs:
       - uses: actions/checkout@v2
       
       # Create labels
-      - run: gh label create chore 🔨 --description "Maintenance" --color 1F8466 
+      - run: gh label create chore🔨 --description "Maintenance" --color 1F8466 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
