@@ -1,7 +1,9 @@
 name: experiment2_project_&_labels
 # Controls when the action will run. Triggers the workflow on creation of a new project
 
-on: create
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   create-labels:
