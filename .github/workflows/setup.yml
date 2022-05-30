@@ -1,4 +1,4 @@
-name: experiment2_project_&_labels
+name: initial setup of repo from template
 # Controls when the action will run. Triggers the workflow on creation of a new project
 
 on:
@@ -17,7 +17,7 @@ jobs:
 
       # Create labels
       - name: Create a label
-        run: gh label create  blocked🚧 --description "Task blocked by some other issue." --color "E7A922" --f 
+        run: gh label create  blocked🚧 --description "Task blocked by some other issue." --color "E7A922"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
