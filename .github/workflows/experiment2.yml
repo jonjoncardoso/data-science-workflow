@@ -16,10 +16,10 @@ jobs:
 
       # Copy a label
       - name: Copy a label
-        run: gh api 
-            -f name='blocked2 🚧'
-            -f description="Task blocked by some other issue."
-            -f color='E7A922'
+        run: gh label create 
+              'blocked2 🚧'
+              description="Task blocked by some other issue."
+              color='E7A922'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
