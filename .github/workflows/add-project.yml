@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v2
       
       # Create labels
-      - run: gh pr create --fill
+      - run: gh pr create new-project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
