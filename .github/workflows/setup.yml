@@ -2,7 +2,7 @@ name: setup
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  create: repo
+  create
   
 # workflow
 jobs:
