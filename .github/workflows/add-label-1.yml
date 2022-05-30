@@ -1,4 +1,4 @@
-name: setup
+name: add-label-1
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       
       # Create labels
-      - run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color E7A922 
+      - run: gh label create blocked🚧 --description "Task blocked by some other issue." --color E7A922 
              #gh label clone jonjoncardoso/data-science-workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
