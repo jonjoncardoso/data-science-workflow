@@ -18,11 +18,33 @@ jobs:
       - uses: actions/checkout@v2
       
       # Create labels
-      - run: gh label create blocked --description "Task blocked by some other issue." --color "E7A922" 
-      - run: gh label create bug --description "Something isn't working" --color "D73A4A" 
-      - run: gh label create chore --description "Maintenance" --color "1F8466"
-      - run: gh label create data_engineering --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color "A2C52F"
-      - run: gh label create documentation --description "Add or update documentation" --color "0075CA"
+      - name: label_blocked
+        continue-on-error: true
+        run: gh label create blocked --description "Task blocked by some other issue." --color "E7A922" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: label_bug
+        continue-on-error: true
+        run: gh label create bug --description "Something isn't working" --color "D73A4A" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: label_chore
+        continue-on-error: true
+        run: gh label create chore --description "Maintenance" --color "1F8466"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: label_data_engineering
+        continue-on-error: true
+        run: gh label create data_engineering --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color "A2C52F"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: label_documentation
+        continue-on-error: true
+        run: gh label create documentation --description "Add or update documentation" --color "0075CA"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
