@@ -18,8 +18,8 @@ jobs:
       - name: Copy a label
         run: gh label create 
               'blocked2 🚧'
-              description="Task blocked by some other issue."
-              color='E7A922'
+              --description "Task blocked by some other issue."
+              --color 'E7A922'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
