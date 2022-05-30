@@ -1,4 +1,4 @@
-name: add-label-1
+name: add-labels
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
@@ -22,11 +22,11 @@ jobs:
       
       # Create labels
       - run: |
-              gh label create "blocked🚧" --description "Task blocked by some other issue." --color E7A922 --force
-              gh label create "bug🐞" --description "Something isn't working" --color D73A4A --force
-              gh label create "chore🔨" --description "Maintenance" --color 1F8466
-              gh label create "data engineering🧹" --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color A2C52F
-              gh label create "documentation📖" --description "Add or update documentation" --color 0075CA
+              gh label create "blocked" --description "Task blocked by some other issue." --color E7A922 --force
+              gh label create "bug" --description "Something isn't working" --color D73A4A --force
+              gh label create "chore" --description "Maintenance" --color 1F8466
+              gh label create "data engineering" --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color A2C52F
+              gh label create "documentation" --description "Add or update documentation" --color 0075CA
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
