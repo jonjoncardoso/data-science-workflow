@@ -2,11 +2,8 @@ name: add-labels
 
 # Controls when the action will run. Triggers the workflow on creation of a new project
 on:
-  push
-    #branches:
-     # - 'main'
-    #paths:
-    #  - '**.md'
+  push  
+  # Gotta find a better trigger
   
 # workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
 jobs:
