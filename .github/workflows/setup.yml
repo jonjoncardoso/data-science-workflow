@@ -22,7 +22,8 @@ jobs:
       
       # Create labels
       - name: Create a label
-        run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color E7A922
+        run: gh label create blocked2🚧 --description "Task blocked by some other issue." --color E7A922 
+             gh label create bug🐞 --description "Something isn't working" --color D73A4A
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
