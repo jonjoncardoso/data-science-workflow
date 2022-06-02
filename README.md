@@ -1,4 +1,3 @@
-[![Inactive PRs](https://github.com/jonjoncardoso/data-science-workflow/actions/workflows/stale.yml/badge.svg?event=workflow_run)](https://github.com/jonjoncardoso/data-science-workflow/actions/workflows/stale.yml)
 
 # A Practical Workflow for Data Science Projects
 
