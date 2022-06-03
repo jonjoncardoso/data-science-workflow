@@ -26,13 +26,13 @@ jobs:
         
       - name: label_bug
         continue-on-error: true
-        run: gh label create bug --description "Something isn't working" --color "D73A4A" 
+        run: gh label create "bug 🐞" --description "Something isn't working" --color "D73A4A" 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       - name: label_chore
         continue-on-error: true
-        run: gh label create chore --description "Maintenance" --color "1F8466"
+        run: gh label create "chore 🔨" --description "Maintenance" --color "1F8466"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
