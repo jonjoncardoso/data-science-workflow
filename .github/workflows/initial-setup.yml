@@ -10,6 +10,31 @@ on:
 # workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
 jobs:
 
+  delete-default-labels:
+  
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Delete labels
+      - name: delete_labels
+        continue-on-error: true
+        run: |
+          gh label delete bug --confirm
+          gh label delete documentation --confirm
+          gh label delete duplicate --confirm
+          gh label delete enhancement --confirm
+          gh label delete "good first issue" --confirm
+          gh label delete "help wanted" --confirm
+          gh label delete "invalid" --confirm
+          gh label delete question --confirm
+          gh label delete wontfix --confirm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   create-labels:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
