@@ -1,9 +1,11 @@
-name: add-labels
+name: initial-setup
 
-# Controls when the action will run. Triggers the workflow on creation of a new project
+# Controls when the action will run.
 on:
-  push  
-  # Gotta find a better trigger
+  push:
+    branches:    
+      - develop
+      - main
   
 # workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
 jobs:
@@ -20,7 +22,6 @@ jobs:
       # Create labels
       - name: label_automation
         continue-on-error: true
-        if: contains(github.event.head_commit.message, 'Initial commit')
         run: gh label create "automation 🦾" --description "Scripts to automate tasks, whether on Github or locally on your computer." --color "96DBB9" 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -134,6 +135,29 @@ jobs:
         if: contains(github.event.head_commit.message, 'Initial commit')
         continue-on-error: true
         run: gh label create "wontfix ⛔" --description "This will not be worked on (provide reasons)" --color "fcfcfc"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Ensures that the main branch is created
+      - name: ensure_main_branch
+        continue-on-error: true
+        run: |
+          git checkout -b main
+          git push --set-upstream origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # Ensures that the main branch is created
+      - name: ensure_develop_branch
+        continue-on-error: true
+        run: |
+          git checkout -b develop
+          git push --set-upstream origin develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: disable_workflow
+        run: gh workflow disable initial-setup
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
