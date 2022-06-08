@@ -1,0 +1,175 @@
+name: initial-setup
+
+# Controls when the action will run.
+on:
+  push:
+    branches:    
+      - develop
+      - main
+  
+# workflow: will trigger error due to this big https://github.com/cli/cli/issues/5633, but label will be created
+jobs:
+
+  create-labels:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Create labels
+      - name: label_automation
+        continue-on-error: true
+        run: gh label create "automation 🦾" --description "Scripts to automate tasks, whether on Github or locally on your computer." --color "96DBB9" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: label_blocked
+        continue-on-error: true
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        run: gh label create "blocked 🚧" --description "Task blocked by some other issue." --color "F9F0F4" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: label_bug
+        continue-on-error: true
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        run: gh label create "bug 🐞" --description "Something isn't working" --color "D73A4A" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: label_chore
+        continue-on-error: true
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        run: gh label create "chore 🔨" --description "Maintenance" --color "1F8466"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: label_data_engineering
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "data_engineering 🧹" --description "Pipelines to pre-process data, to scale or to accommodate code for running on the cloud" --color "A2C52F"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: label_documentation
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "documentation 📖" --description "Add or update documentation" --color "0075CA"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_duplicate
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "duplicate ‼️" --description "This issue or pull request already exists" --color "cfd3d7"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_eda
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "exploratory analysis 🔬" --description "We want to explore some data or perform some analysis that will become a feature later" --color "D4C5F9"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_feature_request
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "feature request 📢" --description "Things that would be nice to have in the code" --color "FFFFFF"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_new_feature
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "feature ✨" --description "New feature" --color "FEF2C0"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: label_newcomers
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "good first issue 🤝" --description "Good for newcomers" --color "e88d74"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+      - name: label_modelling
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "modelling 🖥️" --description "Fitting an algorithm to data or formulation/reformulation of equations" --color "BFD4F2"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_question
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "open question 💭" --description "Something is uncertain or ambiguous and further information is requested" --color "e569b8"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_refactoring
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "refactoring ♻️" --description "Some things just have to be re-done or re-organized" --color "C2E0C6"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_sprint
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "sprint ➡️" --description "Tasks to be done on the current sprint" --color "D5EEF5"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_dataviz
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "dataviz 🖼️" --description "Visualisation-related stuff" --color "212121"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: label_wontfix
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "wontfix ⛔" --description "This will not be worked on (provide reasons)" --color "fcfcfc"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  branches:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Ensures that the main branch is created
+      - name: ensure_main_branch
+        continue-on-error: true
+        run: |
+          git checkout -b main
+          git push --set-upstream origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # Ensures that the main branch is created
+      - name: ensure_develop_branch
+        continue-on-error: true
+        run: |
+          git checkout -b develop
+          git push --set-upstream origin develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: disable_workflow
+        run: gh workflow disable initial-setup
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+          
+          
+      
