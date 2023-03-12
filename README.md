@@ -13,6 +13,7 @@ _If you like this project, please consider giving it a ⭐️!_
 
 **People who have contributed to this course in the past:**
 
+- [Karina Moura](https://github.com/kvmoura). _A stellar project manager!_
 - [Natalia Del Coco](https://github.com/NataliaDelCoco). _She is taking her van to the mountains for a while._
 - [Sara Luxmoore](https://github.com/SaraLuxmoore). _She can be seen doing cool research-related stuff in Italy these days._
 
