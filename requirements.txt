@@ -1,16 +1,17 @@
-ipdb==0.13.9
-pytest==6.2.4
-wheel==0.37.1
+# Regular DS stuff
+numpy==1.24.2
+scipy==1.10.0
+pandas==1.5.3
 
-plotnine==0.8.0 # Python version of ggplot2
+# Web scraping/APIs
+requests==2.28.2
+beautifulsoup4==4.11.2
 
-numpy>=1.22
-scipy==1.8.1
-pandas==1.4.2
-scikit-learn==0.24.2
+# Visualization
+matplotlib==3.7.0
+plotnine==0.10.1 # Python version of ggplot2
+networkx>=2
 
-### UTILS
-jupyterlab==3.4.2
-jupyterlab_execute_time==2.0.5
-ipywidgets==7.6.5
-tqdm==4.62.0
+# Stuff VSCode needs
+ipykernel==6.21.2
+jupyterlab==3.6.1

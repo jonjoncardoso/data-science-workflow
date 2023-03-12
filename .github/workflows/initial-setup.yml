@@ -42,6 +42,7 @@ jobs:
         if: contains(github.event.head_commit.message, 'Initial commit')
         run: |
           gh label delete "bug"              --confirm
+          gh label delete "documentation"    --confirm
           gh label delete "duplicate"        --confirm
           gh label delete "enhancement"      --confirm
           gh label delete "good first issue" --confirm
