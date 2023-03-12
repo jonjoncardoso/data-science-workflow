@@ -15,3 +15,7 @@ networkx>=2
 # Stuff VSCode needs
 ipykernel==6.21.2
 jupyterlab==3.6.1
+
+
+# Your custom packages
+./src/python/

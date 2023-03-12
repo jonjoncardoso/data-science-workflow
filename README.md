@@ -14,7 +14,7 @@ This is a standalone **template project** that can be used as a starting point f
 - [Natalia Del Coco](https://github.com/NataliaDelCoco). _She is taking her van to the mountains for a while._
 - [Sara Luxmoore](https://github.com/SaraLuxmoore). _She can be seen doing cool research-related stuff in Italy these days._
 
-# Repository set up
+# Initial repository set up
 
 Follow the instructions below to make use of this template.
 
@@ -28,18 +28,34 @@ Follow the instructions below to make use of this template.
 3. GitHub will copy the files from this repository into your new repository and it will trigger an **Actions** workflow. This workflow will customize labels (to include emojis!) as well as Issues and Pull Request templates for your project.
     - If you are not familiar with GitHub Actions, you can read more about it [here](https://docs.github.com/en/actions).
 
+4. Clone your new repository to your computer and start working on it!
+
+# First steps
+
+Once you have cloned your new repository to your computer, you might want to do the following:
+
+1. Update the `README.md` file to remove all things related to this template and add information about your project.
+
+2. Update the `LICENSE` file to reflect the license you want to use for your project. You can find a list of open-source licenses [here](https://choosealicense.com/).
+
+3. Modify the name of the `src/python/pkg_name` folder to reflect the name of your project. You can also remove the `pkg_name` folder if you are not planning on using custom Python packages.
+
+# More information
+
+Click on the links below to learn how to best use this template, and how to contribute to it.
+
 <details><summary>✋ How to contribute</summary>
 
 ## ✋ How to contribute
 
-If you want to propose changes to the website, or to course material or if you were tasked to do so, you should follow the steps below:
+If you want to propose changes to the template, follow the steps below:
 
 1. Set up your environment by following the instructions in the [Dev Setup](#dev-setup) section.
 2. Create a new branch from `develop` and give it a meaningful name. Best practices involve using the following format: `<your-username>/<issue-number>-<short-description>`. For example, if you are working on issue #3, you could name your branch `jonjoncardoso/3-update-github-action`. Remember the [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow!
 3. Make your changes and commit them to your branch. Remember to commit often and to write meaningful commit messages. If you are working on a specific issue, you can use the following format: `<gitmoji> #<issue-number> <commit-message>`. For example, if you are working on issue #3, you could write `📝 #3 Update GitHub Action`. 
     - To add emojis on Windows, just type `Win + .` and then select the emoji you want. On Mac, it's the world symbol `⌘ + Ctrl + Space`.
     - You can find a list of gitmojis [here](https://gitmoji.dev/). If you are not sure what to write, you can use `📝` for documentation, `🐛` for bug fixes, `🌟` for new features, and `♻️` for refactoring. You can also use `🔧` for general changes. If you are not sure, just ask! 
-4. When you are done, push all your commits and then open a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) to merge your branch into `develop`. You can do this by clicking on the "Compare & pull request" button on Github. Make sure to add a meaningful title and description to your pull request. If you are working on a specific issue, you can use the following format: `#<issue-number> <pull-request-title>`. For example, if you are working on issue #3, you could write `#3 Update GitHub Action`. Mark @jonjoncardoso as reviewer.
+4. When you are done, push all your commits and then open a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) to merge your branch into `develop`. You can do this by clicking on the "Compare & pull request" button on GitHub. Make sure to add a meaningful title and description to your pull request. If you are working on a specific issue, you can use the following format: `#<issue-number> <pull-request-title>`. For example, if you are working on issue #3, you could write `#3 Update GitHub Action`. Mark @jonjoncardoso as a reviewer.
 
 </details>
 
