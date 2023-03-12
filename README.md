@@ -1,28 +1,19 @@
 
 # A Practical Workflow for Data Science Projects
 
-This project is intended as a template structure for data science projects. Its main intended use is for teams within organizations but we see no reason why you would not benefit from it even if you are coding solo, participating in a data hackaton or are in a academic group, doing exploratory, statistical analysis or algorithm modelling.
+This project is intended as a template structure for data science projects. Its main intended use is for teams within organizations but we see no reason why you would not benefit from it even if you are coding solo, participating in a data hackathon or are in an academic group, doing exploratory, statistical analysis or algorithm modelling.
 
-(WIP: This README page will be updated with more elements suited for data science projects)
+This is a standalone **template project** that can be used as a starting point for any data science project. It is not a framework, a library, or a package. It is a template that you can use to start your own project. It is not intended to be a one-size-fits-all solution, but rather a starting point for you to build your own project structure.
 
-# Set up (virtualenv)
+# Set up
 
-Follow the instructions below to setup the development environment and all required packages used in this project
+Follow the instructions below to make use of this template.
 
-1. [Clone this repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to a directory in your machine
-2. [Set up Python, Pip and Virtualenv](http://timsherratt.org/digital-heritage-handbook/docs/python-pip-virtualenv/)
-3. Open the terminal and build the dependencies:
-```{console}
-cd <project_name>
-python3 -m virtualenv venv
-python3 -m pip install -r requirements.txt
-```
-The first time you run this build, it will take several minutes to complete. Trust me, it is better to run this and wait the building time than having to install each multiple python dependencies by hand and having to figure out why your colleague gets a weird and mysterious, previously unseen Exception when running the same code as you!
+1. Create a new repository on GitHub using this template. You can do this by clicking on the green "Use this template" button on the top right of this page. 
 
-4. Still on the terminal, run Jupyter server with the command:
-```{console}
-source venv/bin/activate
-jupyter lab
-```
+![Illustration of how to use this template](https://user-images.githubusercontent.com/896254/224554953-9819f73a-fdd1-4045-a183-dfa7d3601121.png)
 
-A URL will show up on your screen, either click on it or copy-paste to your browser and run the notebooks.
+2. Give your project a name and description. You can also choose to make the repository **private** if you wish. 
+
+3. GitHub will copy the files from this repository into your new repository and it will trigger an **Actions** workflow. This workflow will customize labels (to include emojis!) as well as Issues and Pull Request templates for your project.
+    - If you are not familiar with GitHub Actions, you can read more about it [here](https://docs.github.com/en/actions).

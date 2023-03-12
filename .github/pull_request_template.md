@@ -1,4 +1,4 @@
-**Optional: Title**
+**Replace this with a title**
 
 ---
 
