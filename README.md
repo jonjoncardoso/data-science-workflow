@@ -14,7 +14,7 @@ This is a standalone **template project** that can be used as a starting point f
 - [Natalia Del Coco](https://github.com/NataliaDelCoco). _She is taking her van to the mountains for a while._
 - [Sara Luxmoore](https://github.com/SaraLuxmoore). _She can be seen doing cool research-related stuff in Italy these days._
 
-# Initial repository set up
+# Initial repository setup
 
 Follow the instructions below to make use of this template.
 
