@@ -63,6 +63,7 @@ If you want to propose changes to the template, follow the steps below:
 </details>
 
 <details><summary>🧰 Dev Setup</summary>
+
 ## 🧰 Dev Setup
 
 ### 🐍 The Python setup
