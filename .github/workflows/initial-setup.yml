@@ -35,7 +35,23 @@ jobs:
           git push --set-upstream origin develop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
+      # Delete boring labels
+      - name: label_automation
+        continue-on-error: true
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        run: |
+          gh label delete "bug"              --confirm
+          gh label delete "duplicate"        --confirm
+          gh label delete "enhancement"      --confirm
+          gh label delete "good first issue" --confirm
+          gh label delete "help wanted"      --confirm
+          gh label delete "invalid"          --confirm
+          gh label delete "question"         --confirm
+          gh label delete "wontfix"          --confirm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Create labels
       - name: label_automation
         continue-on-error: true
