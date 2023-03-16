@@ -17,15 +17,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          
-      # Ensures that the main branch is created
-      - name: ensure_develop_branch
-        continue-on-error: true
-        run: |
-          git checkout -b develop
-          git push --set-upstream origin develop
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Delete boring labels
       - name: label_automation
