@@ -157,6 +157,7 @@ jobs:
 
       - name: disable_workflow
         run: gh workflow disable initial-setup
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
