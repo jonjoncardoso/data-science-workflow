@@ -155,6 +155,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: label_volunteers
+        if: contains(github.event.head_commit.message, 'Initial commit')
+        continue-on-error: true
+        run: gh label create "volunteers wanted 🙋🏻" --description "Anyone can take on this issue, just assign yourself" --color "55CD75"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: disable_workflow
         run: gh workflow disable initial-setup
         continue-on-error: true
